@@ -1,33 +1,29 @@
-/*
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-*/
-
-* {
-    margin: border-box;
-}
-
 :root {
     --dark-blue: hsl(240, 38%, 20%);
     --grayish-blue: hsl(240, 18%, 77%);
 }
 
-body {
+* {
     margin: 0;
+    padding: 0;
+    border: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100%;
     font-family: 'Inter', sans-serif;
     background-image: url(./images/pattern-bg.svg), url(./images/pattern-curve.svg);
+    background-size: 100%, 100%;
     background-repeat: no-repeat;
-    background-position: right 14.5% bottom 105px, left 0px bottom 0px;
-    overflow: hidden;
+    background-position: right 14.5% top 10px, left 0px bottom 0px;
 }
 
 /* MAIN CONTAINER */
 .slider {
-    margin: 0;
     width: 100%;
     height: 100vh;
+    margin: 0 auto;
     background-image: url(./images/pattern-quotes.svg);
     background-repeat: no-repeat;
     background-position: left 18.5vw bottom 75vh;
@@ -35,64 +31,59 @@ body {
 }
 
 .quote-container1, .quote-container2 {
-    width: 78vw;
-    height: 68vh;
-    margin: 110px 11.5vw;
+    width: 80%;
+    height: auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin: 3vh auto 10vh auto;
 }
-
 .display-none {
     display: none;
 }
-
 .quote {
-    z-index: 2;
-    width: 44vw;
-    margin: 135px 0;
+    text-align: center;
 }
 
 /* FONT PARAMETRES */
 .text {
-    font-size: 2.23vw;
+    font-size: 16px;
     font-weight: 300;
-    line-height: 2.8rem;
+    line-height: 2.3rem;
 }
-
 .name {
-    font-size: 1.38vw;
+    font-size: 14px;
     font-weight: 700;
-    margin-top: 40px;
+    margin-top: 30px;
 }
-
 .about {
-    font-size: 1.25vw;
+    font-size: 13px;
     font-weight: 500;
     color: var(--grayish-blue);
 }
 
 /* TANYA & JOHN PICTURES */
 .picture {
-    position: absolute;
-    z-index: 1;
-    bottom: 50%;
-    left: 67.5%;
-    transform: translate(-50%, 45%) scale(1);
+    text-align: center;
+    margin: 0 0 30px 0 ;
 }
-
 .tanya {
+    width: 90%;
     border-radius: 10px;
     box-shadow: 0 20px 50px hsla(240, 38%, 20%, 0.3);
 }
 
-
 /* BUTTON */
 .schift {
-    position: absolute;
+    width: 80px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -50px;
+
     z-index: 2;
-    bottom: 16.5%;
-    left: 53%;
-    padding: 15px 10px;
     background-color: white;
     border-radius: 50px;
 }
@@ -112,7 +103,7 @@ button:hover {
 .attribution {
     font-size: 11px;
     text-align: center;
-    margin-top: -125px;
+    margin-top: 80px;
 }
 
 .attribution a {
@@ -121,72 +112,106 @@ button:hover {
  
 
 /* MEDIA QUERY WIDTH < 950px */
-@media (max-width: 950px) {
+@media (min-width: 768px) {
     body {
-        background-size: 400px;
-        height: auto;
-        background-position: right 49.5% top 34px, left 0vw bottom 0vh;
-        overflow:auto;
+        width: 100vw;
+        height: 100vh;
+        font-family: 'Inter', sans-serif;
+        background-image: url(./images/pattern-bg.svg), url(./images/pattern-curve.svg);
+        background-repeat: no-repeat;
+        background-size: 50%, 50%;
+        background-position: right 14.5% bottom 105px, left 0px bottom 0px;
     }
-
-/* TANYA & JOHN PICTURE */
-    .picture {;
-        top: -70vh;
-        left: 50vw;
-        transform: translate(-50%, 45%) scale(0.58);
-    }
-
-/* BUTTON POSITION */
-    .schift {
-        bottom: 48.5vh;
-        left: 40vw;
-    }
-
-/* CONTAINERS SIZE */
+    
+    /* MAIN CONTAINER */
     .slider {
-        height: 60vh;
+        width: 100vw;
+        height: auto;
         background-image: url(./images/pattern-quotes.svg);
         background-repeat: no-repeat;
-        background-position: left 43vw top 16.33vh;
-        background-size: 70px;
+        background-position: left 18.5vw bottom 75vh;
+        background-size: 8.34vw;
+        position: relative;
+        top: 20%;
     }
-
     .quote-container1, .quote-container2 {
-        width: 75vw;
-        height: 40vh;
+        width: 80%;
+        height: auto;
         margin: 0px auto;
-        margin-top: 40.2vh;
-        display: flex;
-        flex-direction: row;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
     }
-
     .display-none {
         display: none;
     }
-
     .quote {
-        width: 80vw;
-        text-align: center;
+        z-index: 2;
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
     }
-
-/* TEXTS SIZE */
+    
+    /* FONT PARAMETRES */
     .text {
-        font-size: 22px;
-        line-height: 1.9rem;
+        font-size: 2.23vw;
+        font-weight: 300;
+        line-height: 2.8rem;
     }
-    
     .name {
-        font-size: 18px;
-        margin-top: 5px;
+        font-size: 1.38vw;
+        font-weight: 700;
+        margin-top: 40px;
+    }
+    .about {
+        font-size: 1.25vw;
+        font-weight: 500;
+        color: var(--grayish-blue);
     }
     
-    .about {
-        display: block;
-        font-size: 18px;
-        margin-top: 5px;
+    /* TANYA & JOHN PICTURES */
+    .picture {
+        text-align: center;
+        margin: 0 0 0 0 ;
     }
+    .tanya {
+        border-radius: 10px;
+        box-shadow: 0 20px 50px hsla(240, 38%, 20%, 0.3);
+    }
+    
+    /* BUTTON */
+    .schift {
+        padding: 15px 20px;
+        background-color: white;
+        border-radius: 50px;
 
+        top: 220px;
+        left: 25%;
+    }
+    
+    button{
+        border: none;
+        background-color: white;
+        margin: 0 10px;
+        outline: none;
+    }
+    
+    button:hover {
+        cursor: pointer;
+    }
+    
+    /* FOOTER */
     .attribution {
-        margin-top: -2vh;
+        font-size: 11px;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        transform: translate(-50%, 40%);
+        margin-top: 0px;
+    }
+    
+    .attribution a {
+        color: hsl(228, 45%, 44%);
     }
 }
